@@ -8,11 +8,13 @@ function displayColors(colors) {
   </div>`
 }
 
-async function getColors() {
-  const response = await fetch("https://apis.scrimba.com/hexcolors?count=25")
+const colorCount = 100
+
+async function getColors(colorCount) {
+  const response = await fetch(`https://apis.scrimba.com/hexcolors?count=${colorCount}`)
   const data = await response.json()
   const colors = data.colors
   displayColors(colors)
 }
 
-getColors()
+getColors(colorCount)
